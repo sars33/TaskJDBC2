@@ -18,10 +18,10 @@ public class Main {
         UserService userService = new UserServiceImpl();
 
       //  userService.createUsersTable();
-        addUserToDatabase();
-        showAllUsers();
+       // addUserToDatabase();
+      //  showAllUsers();
        // userService.cleanUsersTable();
-      //  userService.dropUsersTable();
+        userService.dropUsersTable();
 
     }
 
