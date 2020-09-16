@@ -17,16 +17,18 @@ public class Main {
 
         UserService userService = new UserServiceImpl();
 
-      //  userService.createUsersTable();
-       // addUserToDatabase();
-      //  showAllUsers();
-       // userService.cleanUsersTable();
+        userService.createUsersTable();
+        addUserToDatabase();
+        showAllUsers();
+        userService.cleanUsersTable();
         userService.dropUsersTable();
 
     }
 
     public static void addUserToDatabase() throws SQLException, ClassNotFoundException {
+
         UserService userService = new UserServiceImpl();
+
         User user = new User("John", "Black", (byte) 45);
         userService.saveUser(user.getName(), user.getLastName(), user.getAge());
         System.out.println("User с именем " + user.getName() + " добавлен в базу данных");
@@ -45,7 +47,9 @@ public class Main {
     }
 
     public static void showAllUsers() throws SQLException, ClassNotFoundException {
+
         UserService userService = new UserServiceImpl();
+
         userService.getAllUsers();
         List<User> users = userService.getAllUsers();
         System.out.println(users);

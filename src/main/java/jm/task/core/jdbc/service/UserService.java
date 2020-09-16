@@ -12,9 +12,9 @@ public interface UserService {
 
     void saveUser(String name, String lastName, byte age) throws SQLException, ClassNotFoundException;
 
-    void removeUserById(long id) throws SQLException;
+    void removeUserById(long id) throws SQLException, ClassNotFoundException;
 
-    List<User> getAllUsers() throws SQLException;
+    List<User> getAllUsers() throws SQLException, ClassNotFoundException;
 
-    void cleanUsersTable() throws SQLException;
+    void cleanUsersTable() throws SQLException, ClassNotFoundException;
 }

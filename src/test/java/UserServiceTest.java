@@ -20,7 +20,7 @@ public class UserServiceTest {
     @Test
     public void dropUsersTable() {
         try {
-            userService.dropUsersTable();
+            userService.createUsersTable();
             userService.dropUsersTable();
         } catch (Exception e) {
             Assert.fail("При тестировании удаления таблицы произошло исключение\n" + e);
@@ -48,8 +48,7 @@ public class UserServiceTest {
 
             if (!testName.equals(user.getName())
                     || !testLastName.equals(user.getLastName())
-                    || testAge != user.getAge()
-            ) {
+                    || testAge != user.getAge()) {
                 Assert.fail("User был некорректно добавлен в базу данных");
             }
 
@@ -61,9 +60,9 @@ public class UserServiceTest {
     @Test
     public void removeUserById() {
         try {
-        //    userService.dropUsersTable();
-         //   userService.createUsersTable();
-         //   userService.saveUser(testName, testLastName, testAge);
+            userService.dropUsersTable();
+            userService.createUsersTable();
+            userService.saveUser(testName, testLastName, testAge);
             userService.removeUserById(1L);
         } catch (Exception e) {
             Assert.fail("При тестировании удаления пользователя по id произошло исключение\n" + e);
