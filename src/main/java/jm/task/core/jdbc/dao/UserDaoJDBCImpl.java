@@ -28,9 +28,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void dropUsersTable() throws SQLException {
-
         String sql = "DROP TABLE  IF EXISTS userbank.user_info";
-
         try (PreparedStatement prepStm = getMyConnection().prepareStatement(sql)) {
             prepStm.executeUpdate();
         } catch (SQLException | ClassNotFoundException e) {
@@ -41,7 +39,6 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) throws SQLException, ClassNotFoundException {
-
         String sql = "INSERT INTO userbank.user_info(name, lastName, age) VALUES (?,?,?)";
 
         try (PreparedStatement prepStat = getMyConnection().prepareStatement(sql)) {
